@@ -1,0 +1,54 @@
+{
+    "name": "crown-components",
+    "version": "1.0.0",
+    "description": "an component library for react projects",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc && tailwindcss -i ./src/tailwind.css -o ./dist/esm/tailwind.css",
+        "build:cjs": "tsc --module CommonJs --outDir dist/cjs && tailwindcss -i ./src/tailwind.css -o ./dist/cjs/tailwind.css",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nastiar13/crown-components"
+    },
+    "keywords": [
+        "crown",
+        "crown-components"
+    ],
+    "author": "nastiar13",
+    "license": "MIT",
+    "devDependencies": {
+        "@storybook/addon-essentials": "^7.6.13",
+        "@storybook/addon-interactions": "^7.6.13",
+        "@storybook/addon-links": "^7.6.13",
+        "@storybook/addon-onboarding": "^1.0.11",
+        "@storybook/blocks": "^7.6.13",
+        "@storybook/react": "^7.6.13",
+        "@storybook/react-vite": "^7.6.13",
+        "@storybook/test": "^7.6.13",
+        "@types/node": "^20.11.17",
+        "@types/react": "^18.2.55",
+        "@types/react-dom": "^18.2.19",
+        "autoprefixer": "^10.4.17",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "postcss": "^8.4.35",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "storybook": "^7.6.13",
+        "tailwind-merge": "^2.2.1",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
